@@ -1,8 +1,8 @@
-int enablePin = 13;
-int rightMotor = 12;
-int leftMotor = 11;
-int rightButton = 9;
-int leftButton = 8;
+int enablePin = 8;
+int rightMotor = 9;
+int leftMotor = 10;
+int rightButton = 11;
+int leftButton = 12;
 
 void setup() {
   // put your setup code here, to run once:
@@ -12,21 +12,21 @@ void setup() {
   pinMode(rightMotor, OUTPUT);
   pinMode(leftMotor, OUTPUT);
   pinMode(rightButton, INPUT);
-  pinMode(8, INPUT);
+  pinMode(leftButton, INPUT);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int buttonPressRight = digitalRead(9);
-  int buttonPressLeft = digitalRead(8);
+  int buttonPressRight = digitalRead(rightButton);
+  int buttonPressLeft = digitalRead(leftButton);
 
-  if (buttonPressRight == LOW) {
+  if (buttonPressRight == HIGH) {
     digitalWrite(rightMotor, HIGH);
     digitalWrite(leftMotor, LOW);
   }
 
-  if (buttonPressLeft == LOW) {
+  if (buttonPressLeft == HIGH) {
     digitalWrite(leftMotor, HIGH);
     digitalWrite(rightMotor, LOW);
   }
